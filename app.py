@@ -8,9 +8,8 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 
 app = Flask(__name__, template_folder='templates')
 #CONFIGURA CONEXÃO COM BANCO DE DADOS.
-engine = create_engine('mssql+pymssql://sa:Ma123456$@localhost:1433/CRUDF')
+engine = create_engine('mssql+pymssql://sa:senha@localhost:porta/database')
 session = scoped_session(sessionmaker(autocommit=False, bind=engine))
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mssql+pymssql://sa:Ma123456$@localhost:1433/CRUDF'
 
 db = SQLAlchemy(app)
 
